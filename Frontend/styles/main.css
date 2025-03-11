@@ -1,0 +1,762 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, ul {
+    margin: 0;
+    padding: 0;
+    /* overflow-x: hidden; */
+}
+
+/* header */
+.header {
+    height: 100vh; /* 100% dari tinggi viewport */
+    width: 100%;
+    background-image: url('../images/profil_depan.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    padding: 0; /* Pastikan padding diatur */
+    margin: 0;  /* Pastikan margin diatur */
+    box-sizing: border-box; /* Pastikan padding dan border tidak memengaruhi ukuran */
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+
+/* .header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-bottom: 0px;
+    height: 100%;
+    z-index: 1;
+} */
+
+.blur {
+    background-color: rgba(0, 0, 0, 0.5); /* Warna blur */
+    padding: 20px 40px;
+    text-align: center;
+    color: white;
+    width: 100%; /* Melebar penuh */
+    z-index: 2; /* Pastikan di atas overlay */
+    position: relative; /* Tetap dalam flow normal */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* nav links style */
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li, .dropdown {
+    position: relative;
+    margin-left: 1.5rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+}
+
+.nav-links a:hover {
+    color: #ddd;
+}
+
+/* dropdown*/
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    top: 100%;
+    left: 0%;
+    background-color: #444;
+    list-style: none;
+    width: 250px;
+    padding: 10px 0;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0,0.3);
+    padding: 10px 0;
+    margin-top: 5px;
+}
+
+.dropdown-menu li{
+    margin: 0;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown-menu:hover {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+}
+
+.dropdown-menu a:hover {
+    background-color: #555;
+}
+
+/* Hamburger menu (untuk mobile) */
+.hamburger {
+    display: none; /* Sembunyikan di desktop */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* sejarah */   
+.content {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+
+}
+
+#sejarah {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sejarah h2 {
+    /* font-family: 'Georgia', serif; Ganti font */
+    font-size: 36px; /* Ubah ukuran */
+    color: #000000; /* Warna vintage */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Efek shadow */
+    padding-bottom: 10px; /* Spasi antara teks dan garis */
+}
+
+
+#sejarah h4 {
+    /* font-family: 'Georgia', serif; Ganti font */
+    font-size: 12px; /* Ubah ukuran */
+    color: #000000; /* Warna vintage */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Efek shadow */
+    padding-bottom: 10px; /* Spasi antara teks dan garis */
+    padding-left: 10px;
+}
+
+.sejarah-image {
+    width: 100%; /* Gambar akan memenuhi lebar parent-nya */
+    height: auto; /* Tinggi disesuaikan agar proporsi gambar tetap */
+    display: block; /* Hilangkan spasi di bawah gambar */
+}
+
+/* Sembunyikan gambar mobile secara default */
+.mobile-image {
+    display: none;
+  }
+  
+/* Tampilkan gambar default */
+.default-image {
+    display: block;
+  }
+
+
+/* Visi dan Misi */
+.visi-misi-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    
+  }
+  
+  .card {
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: justify;
+    margin-bottom: 15px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+
+  .card p {
+    text-align: justify; /* Biar teks rata kiri-kanan */
+    line-height: 1.6; /* Jarak antar baris */
+    margin-bottom: 15px; /* Jarak antar paragraf */
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .detail {
+    display: none;
+    margin-top: 10px;
+    text-align: justify; /* Biar teks rata kiri-kanan */
+  }
+  
+  .card:hover .detail {
+    display: block;
+
+  }
+
+
+/* Efek hover di layar besar */
+@media (min-width: 768px) {
+    .card:hover {
+      background-color: #f9f9f9;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+
+/* <!-- CSS for Team Carousel -->!> */
+
+.team {
+    padding: 60px 20px;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.team-title {
+    margin-bottom: 50px;
+    font-size: 36px;
+    color: #333;
+    position: relative;
+    display: inline-block;
+}
+
+.team-title:after {
+    content: '';
+    position: absolute;
+    width: 70%;        /* Lebar underline (bisa diubah) */
+    height: 3px;       /* Ketebalan underline */
+    background: linear-gradient(90deg, #3498db, #2ecc71); /* Warna gradient */
+    bottom: -10px;     /* Jarak underline dari teks */
+    left: 15%;         /* Posisi horizontal (15% dari kiri elemen) */
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.team-card {
+    min-width: 350px;
+    height: 180px;
+    margin: 0 20px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.team-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card-front {
+    display: flex;
+    background-color: white;
+}
+
+.member-img {
+    width: 35%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.member-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.member-info {
+    width: 65%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.member-info h3 {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.member-info p {
+    margin: 0;
+    color: #666;
+}
+
+.card-back {
+    background-color: #333;
+    color: white;
+    transform: rotateY(180deg);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-back p {
+    margin-bottom: 15px;
+}
+
+.linkedin-link {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #0077B5;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.linkedin-link:hover {
+    background-color: #005582;
+}
+
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+/* kualitas produk */
+.gallery {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.gallery__header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.gallery__title {
+    font-size: 2rem;
+    color: #333;
+    position: relative;
+    display: inline-block;
+}
+
+.gallery__title:after {
+    content: '';
+    position: absolute;
+    width: 70%;        /* Lebar underline (bisa diubah) */
+    height: 3px;       /* Ketebalan underline */
+    background: linear-gradient(90deg, #3498db, #2ecc71); /* Warna gradient */
+    bottom: -10px;     /* Jarak underline dari teks */
+    left: 15%;         /* Posisi horizontal (15% dari kiri elemen) */
+}
+
+.gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 kolom per baris */
+    gap: 15px;
+}
+
+.gallery__item {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery__item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.gallery__image {
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+/* Modal Block */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal__content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.modal__close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.modal__close:hover {
+    color: #ccc;
+}
+
+
+/* testimoni */
+.testimonials {
+    padding: 60px 0;
+    background-color: #fff;
+    text-align: center;
+    overflow: hidden;
+}
+
+.testimonials h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #333;
+    position: relative;
+    display: inline-block;
+}
+
+.testimonials h2:after {
+    content: '';
+    position: absolute;
+    width: 70%;
+    height: 3px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    bottom: -10px;
+    left: 15%;
+}
+
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee 30s linear infinite;
+    gap: 30px;
+    padding: 20px 0;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.marquee:hover {
+    animation-play-state: paused;
+}
+
+.testimonial-card {
+    width: 320px;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 220px;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-quote {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-style: italic;
+    position: relative;
+}
+
+.testimonial-quote:before {
+    content: '"';
+    font-size: 60px;
+    color: rgba(0, 0, 0, 0.05);
+    position: absolute;
+    top: -20px;
+    left: -10px;
+}
+
+.testimonial-quote:after {
+    content: '"';
+    font-size: 60px;
+    color: rgba(0, 0, 0, 0.05);
+    position: absolute;
+    bottom: -40px;
+    right: -10px;
+}
+
+.testimonial-author {
+    font-weight: bold;
+    color: #333;
+    font-size: 16px;
+}
+
+.testimonial-position {
+    color: #777;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.testimonial-clone {
+    display: flex;
+    width: max-content;
+    gap: 30px;
+    padding: 20px 0;
+}
+/* akhir testimoni */
+
+/* hubungi */
+.contact-form {
+    text-align: center; /* Tengahin teks dan elemen inline*/
+}
+
+.contact-form {
+    text-align: center; /* Tengahin teks dan elemen inline */
+}
+/* akhir hubungi */
+
+/* footer */
+footer {
+    background: #333; /* Warna gelap */
+    color: #ccc; /* Abu-abu muda, biar gak terlalu kuat */
+    text-align: center;
+    padding: 20px 0; /* Jarak atas bawah */
+    min-height: 60px; /* Minimal tinggi footer */
+}
+/* akhir footer */
+
+
+/* mobile */
+/* Responsive design */
+@media (max-width: 768px) {
+/* nav */
+    .nav-links {
+        display: none; /* Sembnyikan menu di mobile */
+        flex-direction: column;
+        width: 100%;
+        background-color: #444;
+        position: absolute;
+        top: 60px; /* Sesuaikan dengan tinggi navbar */
+        left: 0;
+    }
+
+    .default-image {
+        display: none; /* Sembunyikan gambar default */
+      }
+    .mobile-image {
+        display: block; /* Tampilkan gambar mobile */
+      }
+
+    .nav-links.active {
+        display: flex; /* Tampilkan menu saat aktif */
+    }
+
+    .hamburger {
+        display: block; /* Tampilkan tombol hamburger di mobile */
+    }
+/* akhir nav */
+
+/* visi dan misi */
+    .visi-misi-container {
+        display: flex;
+        flex-direction: column; /* Tumpuk card vertikal */
+        align-items: center;
+        gap: 10px; /* Jarak antar card */
+        }
+/* akhir visi dan misi */
+
+/* member */
+    .card {
+        padding: 15px; /* Tambahkan padding ke card */
+        margin-bottom: 10px; /* Jarak antar card */
+    }
+
+    .card h3 {
+        padding-bottom: 10px; /* Jarak bawah judul */
+    }
+
+    .card p {
+        padding-top: 10px; /* Jarak atas paragraf */
+    }
+
+    .card .content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+      }
+      
+      /* Efek saat card aktif (di-klik) */
+    .card.active {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+      
+    .card.active .content {
+        max-height: 200px; /* Sesuaikan dengan kebutuhan */
+      }
+
+      .team-card {
+        min-width: 250px;
+        height: 300px;
+    }
+    
+    .card-front {
+        flex-direction: column;
+    }
+    
+    .member-img {
+        width: 100%;
+        height: 60%;
+    }
+    
+    .member-info {
+        width: 100%;
+        height: 40%;
+        text-align: center;
+    }
+    
+    .card-inner:hover {
+        transform: none;
+    }
+    
+    .card-back {
+        display: none;
+    }
+    
+    .team-card {
+        cursor: pointer;
+    }
+/* akhir member*/
+
+/* kualitas produk */
+.gallery__grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom per baris */
+}
+/* akhir kualitas produk */
+
+/* testimoni */
+.testimonials h2 {
+    font-size: 28px;
+}
+
+.testimonial-card {
+    width: 280px;
+    padding: 20px;
+}
+/* akhir testimoni */
+
+}

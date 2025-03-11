@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Perusahaan - Nama Perusahaan</title>
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="frontend/styles/main.css">
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .content { padding: 20px; }
+        .team, .services, .testimonials { margin-bottom: 40px; }
+        .team img, .services img { width: 100%; max-width: 200px; height: auto; }
+        .contact-form { background-color: #f9f9f9; padding: 20px; }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Pt.Kentang</div>
+        <ul class="nav-links">
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#">Tentang Kami</a></li>
+            <li class="dropdown">
+                <a href="#">Produk</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Produk 1</a></li>
+                    <li><a href="#">Produk 2</a></li>
+                    <li><a href="#">Produk 3</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Layanan</a></li>
+            <li><a href="#">Kontak</a></li>
+        </ul>
+        <button class="hamburger">☰</button> <!-- Tombol hamburger -->
+    </nav>
+    <!-- Akhir Navbar -->
+
+    <!-- Header -->
+    <div class="header">
+        <div data-aos="fade-in" class="blur">
+            <h1>Tentang Kami</h1>
+            <p>Profil Perusahaan - PT. Kentang</p>
+        </div>
+    </div>
+    <!-- Akhir Header -->
+
+    <!-- Sejarah -->
+    <section id="sejarah" class="fullscreen-section" data-aos="fade-down" data-aos-offset="500">
+        <h2>Sejarah</h2>
+        <h4>Pt.Kentang telah melewati berbagai catatan sejarah, yang dapat diringkas menjadi:
+        </h4>
+        <img src="Frontend/images/Sejarah.png" alt="gambar Sejarah" class="sejarah-image default-image">
+        <!-- mobile -->
+        <img src="Frontend/images/Sejarah_Mobile.png" alt="gambar Sejarah" class="sejarah-image mobile-image">
+    </section>
+    <!-- Akhir Sejarah -->
+
+    <!-- Visi Misi -->
+    <div class="visi-misi-container">
+        <div data-aos="fade-right" class="card visi">
+          <h3>Visi</h3>
+          <div class="content"></div>
+          <p>Menjadi perusahaan terkemuka dalam penyediaan kentang berkualitas tinggi yang lezat dan bergizi.</p>
+        </div>
+        <div data-aos="fade-left" class="card misi">
+          <h3>Misi</h3>
+          <div class="contact"></div>
+          <p>menyediakan kentang berkualitas tinggi yang lezat dan bergizi bagi pelanggan, dengan inovasi produk dan layanan terbaik.</p>
+          <div class="detail">
+            <p>1. Menyediakan kentang berkualitas tinggi dengan standar produksi terbaik. <br>
+                2. Mengembangkan berbagai produk olahan kentang yang inovatif dan sesuai dengan selera pasar.<br>
+                3. Meningkatkan kepuasan pelanggan melalui pelayanan yang cepat dan ramah. <br>
+                4. Mengutamakan keberlanjutan dengan menerapkan praktik pertanian dan produksi yang ramah lingkungan. <br>
+                5. Memperluas jaringan distribusi untuk memastikan produk kami mudah dijangkau oleh konsumen.</p>
+          </div>
+        </div>
+    </div>
+    <!-- Akhir Visi Misi -->
+
+
+<!-- Team Section -->
+<section class="team">
+    <h2 class="team-title">Tim Kami</h2>
+    
+    <div class="carousel-container">
+        <div class="carousel-track">
+            <!-- Team Member 1 -->
+            <div class="team-card" data-aos="flip-left" data-aos-duration="1000">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="member-img">
+                            <img src="Frontend/images/John Doe.png" alt="John Doe">
+                        </div>
+                        <div class="member-info">
+                            <h3>John Doe</h3>
+                            <p>CEO & Founder</p>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <p>John Doe memiliki pengalaman lebih dari 10 tahun dalam industri kentang. Beliau memulai bisnis ini dari sebuah kebun kecil yang kini telah berkembang menjadi perusahaan terkemuka.</p>
+                        <a href="https://linkedin.com/in/johndoe" target="_blank" class="linkedin-link">Lihat LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="team-card" data-aos="flip-left" data-aos-duration="1000">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="member-img">
+                            <img src="Frontend/images/Jane Smith.webp" alt="Jane Smith">
+                        </div>
+                        <div class="member-info">
+                            <h3>Jane Smith</h3>
+                            <p>COO</p>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <p>Jane Smith adalah pakar operasional dengan pengalaman dalam mengelola rantai pasokan pertanian. Beliau berperan penting dalam mengembangkan sistem distribusi perusahaan.</p>
+                        <a href="https://linkedin.com/in/janesmith" target="_blank" class="linkedin-link">Lihat LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="team-card" data-aos="flip-left" data-aos-duration="1000">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="member-img">
+                            <img src="Frontend/images/David Johnson.webp" alt="David Johnson">
+                        </div>
+                        <div class="member-info">
+                            <h3>David Johnson</h3>
+                            <p>Head of Farming</p>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <p>David Johnson adalah ahli agrikultur dengan spesialisasi dalam kultivasi kentang berkualitas tinggi. Inovasinya telah meningkatkan hasil panen hingga 40%.</p>
+                        <a href="https://linkedin.com/in/davidjohnson" target="_blank" class="linkedin-link">Lihat LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member 4 -->
+            <div class="team-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="member-img">
+                            <img src="Frontend/images/Maria Garcia.webp" alt="Maria Garcia">
+                        </div>
+                        <div class="member-info">
+                            <h3>Maria Garcia</h3>
+                            <p>Marketing Director</p>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <p>Maria Garcia telah membangun brand PT. Kentang menjadi salah satu yang paling dikenali. Strateginya telah membantu perusahaan memperluas pasar ke seluruh negeri.</p>
+                        <a href="https://linkedin.com/in/mariagarcia" target="_blank" class="linkedin-link">Lihat LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member 5 -->
+            <div class="team-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="member-img">
+                            <img src="Frontend/images/Robert Kim.webp" alt="Robert Kim">
+                        </div>
+                        <div class="member-info">
+                            <h3>Robert Kim</h3>
+                            <p>R&D Manager</p>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <p>Robert Kim memimpin tim riset yang mengembangkan varietas kentang terbaru. Beliau telah mendapatkan beberapa paten untuk inovasi pertanian.</p>
+                        <a href="https://linkedin.com/in/robertkim" target="_blank" class="linkedin-link">Lihat LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Navigation arrows -->
+        <button class="carousel-nav carousel-prev">&lt;</button>
+        <button class="carousel-nav carousel-next">&gt;</button>
+    </div>
+</section>
+<!-- Akhir Team-Section -->
+
+<!-- produk -->
+<section id="gallery" class="gallery">
+    <div class="gallery__container">
+        <div class="gallery__header">
+            <h2 class="gallery__title">Kualitas Produk</h2>
+        </div>
+        <div class="gallery__grid">
+            <div class="gallery__item">
+                <img src="Frontend/images/Kentang 1.jpg" alt="Bibit Kentang" class="gallery__image">
+            </div>
+            <div class="gallery__item">
+                <img src="Frontend/images/Kentang 2.jpg" alt="Kentang 1" class="gallery__image">
+            </div>
+            <div class="gallery__item">
+                <img src="Frontend/images/Kentang 3.jpg" alt="Kentang 2" class="gallery__image">
+            </div>
+            <div class="gallery__item">
+                <img src="Frontend/images/Kentang 4.jpg" alt="Kentang 4" class="gallery__image">
+            </div>
+            <div class="gallery__item">
+                <img src="Frontend/images/Kentang 5.jpg" alt="Kentang 4" class="gallery__image">
+            </div>
+            <div class="gallery__item">
+                <img src="Frontend/images/Kentang 6.jpg" alt="Kentang 5" class="gallery__image">
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal untuk tampilan full screen -->
+    <div id="modal" class="modal">
+        <span class="modal__close">&times;</span>
+        <img class="modal__content" id="modal-image">
+    </div>
+</section>
+<!-- akhir produk -->
+
+<!-- testimoni -->
+<section class="testimonials">
+    <h2>Testimoni Klien Kami</h2>
+    <div class="marquee-container">
+        <div class="marquee" id="marquee">
+            <!-- JavaScript nanti yang ngisi Testimoni-nya-->
+        </div>
+    </div>
+</section>
+<!-- akhir testimoni -->
+
+<!-- contact -->
+<section class="contact-form">
+    <h2 class="hubungi">Hubungi Kami</h2>
+    <a href="https://www.linkedin.com/in/imam-muhammad-diponegoro-7291b5289/"><img src="Frontend/images/icons8-linkedin.svg" alt="icon linkedin"></a>
+    <a href="https://www.linkedin.com/in/imam-muhammad-diponegoro-7291b5289/"><img src="Frontend/images/icons8-whatsapp.svg" alt="icon whatsapp"></a>
+</section>
+<!-- akhir contact -->
+
+<!-- footer -->
+<footer>
+    <hr>
+    <br>
+    Sahur, Sahur, Sahur @copyright tung tung tung
+</footer>
+<!-- akhir footer -->
+
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+    const img_galler = document.querySelectorAll('.gallery__item');
+
+    img_galler.forEach((img, i) => {
+        img.dataset.aos = 'flip-up';
+        img.dataset.aosDelay = i * 50;
+    })
+    
+      AOS.init({
+        once:true,
+      });
+    </script>
+    <script src="Frontend/script/main.js"></script>
+</body>
+</html>
